@@ -1,6 +1,8 @@
 .main-container
 {
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     .header
     {
         background-color: #768991;
@@ -91,6 +93,7 @@
     {
         width: 100%;
         background-color: lightgrey;
+        min-height: 245px;
 
         table 
         {
@@ -117,6 +120,8 @@
         align-items: center;
         background-color: #768991;
         margin-top: 10px;
+        position: absolute;
+        bottom: 0;
 
         .rights
         {
