@@ -1,0 +1,63 @@
+<div class="main-container">
+  <div class="header">
+    <ul>
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Shop</li>
+      <li>Contact Us</li>
+    </ul>
+  </div>
+
+  <div class="content-container">
+    <div class="form">
+      <div class="heading">Create Task</div>
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="block">
+          <label for="title">Title</label>
+          <input type="text" formControlName="title" id="title">
+        </div>
+
+        <div class="block">
+          <label for="todo">ToDo</label>
+          <input type="text" formControlName="todo" id="todo">
+        </div>
+
+        <div class="block">
+          <label for="description">Description</label>
+          <input type="text" formControlName="description" id="description">
+        </div>
+
+        <div class="button">
+          <button type="submit" class="save-button">Save</button>
+        </div>
+      </form>
+    </div>
+    <div class="image"><img src="../assets/images/blog-1.jpg" alt=""></div>
+  </div>
+
+  <div class="show-task-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Title</th>
+          <th>ToDo</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.number }}</td> <!-- Assuming task has a property called 'number' -->
+          <td>{{ task.title }}</td>
+          <td>{{ task.todo }}</td>
+          <td>{{ task.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="rights">© 2014-2023 Mockplus Technology Co., Ltd. All rights reserved</div>
+  </div>
+  
+</div>
