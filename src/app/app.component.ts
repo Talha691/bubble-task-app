@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
       this.http.post('http://localhost:3000/create-task', payload)
       .subscribe(
         (response: any) => {
+          this.getTasks()
           if (response && response.status === 'success')
           {
             this.getTasks()
@@ -53,6 +54,7 @@ export class AppComponent implements OnInit {
     this.http.get('http://localhost:3000/gettasks')
       .subscribe(
         (response: any) => {
+          console.log(response, "Response")
           if (response && response.message === 'success')
             response.data = this.tasksList;
             this.tasksList = response.data;
@@ -62,4 +64,18 @@ export class AppComponent implements OnInit {
         }
       );
   }
+
+  onDelete(id: string) {
+    console.log(id, "Task Id is");
+    const options = 
+    {
+      body: { id: id } 
+    };
+    this.http.delete('http://localhost:3000/delete-task', options)
+      .subscribe((response: any) => {
+        console.log(response, "On Delete");
+        this.getTasks();
+      });
+  }
+
 }  

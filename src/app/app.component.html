@@ -53,6 +53,7 @@
           <th>Title</th>
           <th>ToDo</th>
           <th>Description</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -61,13 +62,14 @@
           <td>{{ task?.title }}</td>
           <td>{{ task?.todo }}</td>
           <td>{{ task?.description }}</td>
+          <td><div class="dlt-button" (click)="onDelete(task?._id)">Delete</div></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="footer">
-    <div class="rights">© 2014-2023 Mockplus Technology Co., Ltd. All rights reserved</div>
+    <div class="rights">© 2014-2024 Dummy Technology Co., Ltd. All rights reserved</div>
   </div>
   
 </div>

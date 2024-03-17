@@ -116,6 +116,15 @@
                 {
                     text-align: start;
                 }
+
+                .dlt-button
+                {
+                    width: 40px;
+                    border-radius: 8px;
+                    background-color: red;
+                    cursor: pointer;
+                    padding: 10px;
+                }
             }
         }
     }
